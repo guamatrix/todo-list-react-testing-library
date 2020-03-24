@@ -1,5 +1,5 @@
 {
-  "name": "react-testing-library",
+  "name": "todo-list-react-testing-library",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.1.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
+    "react-hook-form": "^5.1.1",
     "react-scripts": "3.4.0"
   },
   "scripts": {
@@ -30,5 +31,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "mutationobserver-shim": "^0.3.3"
   }
 }
