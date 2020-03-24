@@ -1,7 +1,7 @@
 import React from 'react'
-import { render, fireEvent } from '@testing-library/react'
-import TodoProvider from './TodoContext'
-import Main from './Main'
+import { render, fireEvent, screen } from '@testing-library/react'
+import TodoProvider from '../TodoContext'
+import Main from '../Main'
 
 describe('Main Component', () => {
   const todos = {

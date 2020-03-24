@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent, getByText as getByTextWithContainer, waitForDomChange, waitForElementToBeRemoved, wait } from '@testing-library/react';
-import App from './App';
+import App from '../App';
 
 describe('App Component', () => {
   test('Should render the app', () => {

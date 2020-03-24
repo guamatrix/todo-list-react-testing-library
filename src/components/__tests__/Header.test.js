@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, fireEvent, waitForElement, waitForElementToBeRemoved, wait } from '@testing-library/react'
-import TodoProvider from './TodoContext'
-import Header from './Header'
+import TodoProvider from '../TodoContext'
+import Header from '../Header'
 
 describe('Header Component', () => {
   const setTodo = jest.fn()

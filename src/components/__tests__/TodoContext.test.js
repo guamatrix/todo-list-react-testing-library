@@ -1,6 +1,6 @@
 import React,  { useContext } from 'react'
 import { render, fireEvent } from '@testing-library/react'
-import TodoProvider, { Context as TodoContext } from './TodoContext'
+import TodoProvider, { Context as TodoContext } from '../TodoContext'
 
 describe('Should provider have todo hanlder methods', () => {
   const setTodo = jest.fn()
