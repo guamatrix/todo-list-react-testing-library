@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, getByText as getByTextWithContainer, waitForDomChange, waitForElementToBeRemoved, wait } from '@testing-library/react';
+import { render, fireEvent, getByText as getByTextWithContainer, waitForDomChange, wait } from '@testing-library/react';
 import App from '../App';
 
 describe('App Component', () => {
@@ -22,22 +22,22 @@ describe('App Component', () => {
     fireEvent.input(todoInput, { target: { value: todos[1] }})
     fireEvent.submit(saveButton)
     await waitForDomChange()
-    // other
+    // uncoment the span from Main.jsx
     // const todosContainer = getByTestId('todo-list')
     todos.forEach((_, index) => {
       expect(getByText(`${todos[index]}`)).toBeInTheDocument()
-      // other
+      // uncoment the span from Main.jsx
       // expect(getByTextWithContainer(todosContainer, `${todos[index]}`)).toBeInTheDocument()
     })
   })
 
   test('Should delete a todo', async () => {
     const { getByText, getByPlaceholderText, queryByText, getByTestId } = render(<App />)
-    fireEvent.input(getByPlaceholderText(/Todo description/), { target: { value: 'new todo  '}})
+    const newTodo = 'new todo to delete'
+    fireEvent.input(getByPlaceholderText(/Todo description/), { target: { value: newTodo }})
     fireEvent.submit(getByText(/Save/))
-    await wait(() => expect(getByText(/new todo/)).toBeInTheDocument())
-    expect(queryByText(/new todo/)).toBeInTheDocument()
+    await wait(() => expect(getByText(newTodo)).toBeInTheDocument())
     fireEvent.click(getByTestId(/delete-todo-0/))
-    expect(queryByText(/new todo/)).toBeFalsy()
+    expect(queryByText(newTodo)).toBeFalsy()
   })
 })
